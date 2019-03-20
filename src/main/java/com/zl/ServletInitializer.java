@@ -1,4 +1,4 @@
-package com.zl.blog_jpa;
+package com.zl;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
