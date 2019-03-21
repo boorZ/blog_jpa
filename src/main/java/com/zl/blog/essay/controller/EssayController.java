@@ -6,9 +6,7 @@ import com.zl.blog.essay.service.EssayService;
 import com.zl.blog.essay.type.filte.EssayFilte;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,18 +21,18 @@ public class EssayController {
     @Autowired
     private EssayService userService;
 
-    @RequestMapping(value = "/pagination", method = RequestMethod.GET)
+    @RequestMapping(value = "/pagination")
     public Page<EssayEntity> pagination(Integer pageNum, Integer pageSize, EssayFilte filter) {
         return userService.findAll(pageNum, pageSize, filter);
     }
 
-    @RequestMapping(value = "/items", method = RequestMethod.GET)
+    @RequestMapping(value = "/items")
     public List<EssayEntity> items(EssayFilte filter) {
         return userService.findAll(filter);
     }
 
-    @RequestMapping(value = "/item", method = RequestMethod.GET)
-    public EssayEntity item(@PathVariable Integer id) {
+    @RequestMapping(value = "/item")
+    public EssayEntity item(Integer id) {
         return userService.findById(id);
     }
 

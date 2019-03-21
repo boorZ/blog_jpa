@@ -32,8 +32,8 @@ public class EssayEntity extends BaseEntity implements Serializable {
     @Column(name = "browse_number", length = 10)
     private Integer browseNumber;
 
-    @Column(name = "create_by", length = 10)
-    private Integer createBy;
+    @Column(name = "create_nm", length = 100)
+    private String createNm;
 
     @Column(name = "create_at", length = 26)
     private Date createAt;
@@ -70,12 +70,12 @@ public class EssayEntity extends BaseEntity implements Serializable {
         this.browseNumber = browseNumber;
     }
 
-    public Integer getCreateBy() {
-        return this.createBy;
+    public String getCreateNm() {
+        return createNm;
     }
 
-    public void setCreateBy(Integer createBy) {
-        this.createBy = createBy;
+    public void setCreateNm(String createNm) {
+        this.createNm = createNm;
     }
 
     public Date getCreateAt() {
